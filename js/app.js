@@ -11,8 +11,19 @@ let calc = document.getElementById("calc")
 
 let inputKm = km.value //number
 
-//crea un prerequisito: km non possono essere 0, i km devono essere un numero
-if (inputKm > 0 && !isNaN(inputKm)) {
+//istruzione 1B: prendere l'età inserita dall'utente nel form
+let nameSurname
+//usare l'ID per il recupero dei dati
+    nameSurname = document.getElementById("name_surname")
+
+let inputName = nameSurname.value //string
+
+//crea un prerequisito: km non possono essere 0, i km devono essere un numero, il nome non deve essere un numero e non può essere una stringa vuota
+if (inputKm > 0 &&
+    !isNaN(inputKm) &&
+    isNaN(inputName) &&
+    inputName != ""
+    ) {
 
 
 //istruzione 2: prendere l'età inserita dall'utente nel form
@@ -44,7 +55,7 @@ let discount
     else{
         discount = price * 0.40; //number
     }
-//Istruzione 5: calcola il prezzo finale
+//Istruzione 5: calcola il prezzo finale e fai dislay in console
 const finalPrice = (price - discount).toFixed(2); //string
         console.log(finalPrice + " euro")
 
@@ -55,20 +66,32 @@ const finalPrice = (price - discount).toFixed(2); //string
         viewPrice.innerHTML += `<span> ${price} </span>`//string
 
 //Istruzione 6B: fai display dello sconto nella pagina
-let viewDiscount 
-viewDiscount = document.getElementById("view_discount"); //string
+        let viewDiscount 
+        viewDiscount = document.getElementById("view_discount"); //string
 
-viewDiscount.innerHTML += `<span> ${discount} </span>`//string
+        viewDiscount.innerHTML += `<span> ${discount} </span>`//string
 
 //istruzione 6C: fai display del prezzo finale nella pagina
-    let viewFinalPrice 
-    viewFinalPrice = document.getElementById("view_final_price"); //string
+        let viewFinalPrice 
+        viewFinalPrice = document.getElementById("view_final_price"); //string
 
-    viewFinalPrice.innerHTML += `<span> ${finalPrice} </span>`//string
+        viewFinalPrice.innerHTML += `<span> ${finalPrice} </span>`//string
+
+
+//istruzione 6D: fai display del nome nella pagina
+        let viewName 
+        viewName = document.getElementById("view_name"); //string
+
+        viewName.innerHTML += `<span> ${inputName} </span>`//string
+
+
+
+
+
     }
     
 
-//Istruzione 7 dai un messaggio di errore se i dati non sono corretti
+//Istruzione 8 dai un messaggio di errore se i dati non sono corretti
     else
     {
         alert("ATTENZIONE! I dati inseriti non sono corretti")
