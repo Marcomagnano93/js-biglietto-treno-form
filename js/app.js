@@ -1,11 +1,3 @@
-//prendere i km inseriti dall'utente nel form
-
-
-
-
-
-
-//stampa il prezzo
 //Usa l'ID per selezionare il bottone
 let calc = document.getElementById("calc")
 
@@ -19,7 +11,8 @@ let calc = document.getElementById("calc")
 
 let inputKm = km.value //number
 
-
+//crea un prerequisito: km non possono essere 0, i km devono essere un numero
+if (inputKm > 0 && !isNaN(inputKm)) {
 
 
 //istruzione 2: prendere l'età inserita dall'utente nel form
@@ -72,6 +65,17 @@ viewDiscount.innerHTML += `<span> ${discount} </span>`//string
     viewFinalPrice = document.getElementById("view_final_price"); //string
 
     viewFinalPrice.innerHTML += `<span> ${finalPrice} </span>`//string
-
     }
+    
+
+//Istruzione 7 dai un messaggio di errore se i dati non sono corretti
+    else
+    {
+        alert("ATTENZIONE! I dati inseriti non sono corretti")
+    }
+        }
 )
+
+
+
+
