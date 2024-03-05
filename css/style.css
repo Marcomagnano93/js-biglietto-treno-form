@@ -1,7 +1,12 @@
 .bg-company_yellow {
     background-color: rgba(218, 245, 82, 0.888);
+    color: white;
 }
 
 .bg-green {
     background-color: lightgreen;
+}
+
+.color_wh{
+    color: white;
 }
