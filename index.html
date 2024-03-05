@@ -14,12 +14,21 @@
     </div>
 
     <div>
-        <label for="age">La tua età</label>
-        <input name="age" id="age" type="text" placeholder="La tua età" />
+        <label for="age">Il tuo sconto: </label>
+        <!-- <input name="age" id="age" type="text" placeholder="La tua età" /> -->
+        <select name="age" id="age">
+            <option value="default">Nessuno</option>
+            <option value="under 18">Minorenne</option>
+            <option value="over 65">Pensionato</option>
+        </select>
     </div>
 
     <div>
-        <button id="calc">Calcola il prezzo</button>
+        <!-- <button id="calc">Calcola il prezzo</button> -->
+        <input type="submit" value="Submit" id="calc" placeholder="Calcola il tuo prezzo">
+    </div>
+    <div>
+        <p>Il tuo prezzo: <span id="viewprice"></span> &euro;</p>
     </div>
 
 
