@@ -1,8 +1,20 @@
 //prendere i km inseriti dall'utente nel form
 
 
-let km
 
+
+
+
+//stampa il prezzo
+//Usa l'ID per selezionare il bottone
+let calc = document.getElementById("calc")
+
+//crea un evento "click" per il bottone e dargli istruzioni
+  let display = calc.addEventListener("click",
+    function() {
+
+        let km
+//istruzione 1: usare l'ID per il recupero dei dati km
     km = document.getElementById("distance")
 
 let inputKm = km.value //number
@@ -10,53 +22,56 @@ let inputKm = km.value //number
 
 
 
-//prendere l'età inserita dall'utente nel form
+//istruzione 2: prendere l'età inserita dall'utente nel form
 let age
-
+//usare l'ID per il recupero dei dati
     age = document.getElementById("age")
 
 let inputAge = age.value //string
 
-console.log(inputAge)
-
-
-//calcola il prezzo premendo sul bottone
 
 
 
-//dai un prezzo ai km
+//istruzione 3: dai un prezzo base ai km
 let price = inputKm * 0.21; //number
 
 
-//aggiungi gli sconti
+//istruzione 4: aggiungi gli sconti in base alla option scelta dall'utente
 
 let discount
+//sconto under 18
     if(inputAge === "under 18"){
         discount = price * 0.20; //number
     } 
+//sconto 18-65
     else if(inputAge !== "under 18" && inputAge !== "over 65"){
         discount = 0; //number
     }
+//sconto 65+
     else{
         discount = price * 0.40; //number
     }
-
+//Istruzione 5: calcola il prezzo finale
 const finalPrice = (price - discount).toFixed(2); //string
+        console.log(finalPrice + " euro")
 
+//Istruzione 6A: fai display del prezzo nella pagina
+        let viewPrice 
+        viewPrice = document.getElementById("view_price"); //string
+    
+        viewPrice.innerHTML += `<span> ${price} </span>`//string
 
+//Istruzione 6B: fai display dello sconto nella pagina
+let viewDiscount 
+viewDiscount = document.getElementById("view_discount"); //string
 
-//stampa il prezzo finale nel bottone
+viewDiscount.innerHTML += `<span> ${discount} </span>`//string
 
-let calc = document.getElementById("calc")
+//istruzione 6C: fai display del prezzo finale nella pagina
+    let viewFinalPrice 
+    viewFinalPrice = document.getElementById("view_final_price"); //string
 
-
-  let display = calc.addEventListener("click",
-    function() {
-        console.log(finalPrice)
-    let view 
-    view = document.getElementById("viewprice");
-
-    view.innerHTML += `<span> ${finalPrice} </span>`
+    viewFinalPrice.innerHTML += `<span> ${finalPrice} </span>`//string
 
     }
 )
