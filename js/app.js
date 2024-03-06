@@ -2,7 +2,7 @@
 let calc = document.getElementById("calc")
 
 //crea un evento "click" per il bottone e dargli istruzioni
-  let display = calc.addEventListener("click",
+ calc.addEventListener("click",
     function() {
 
         let km
